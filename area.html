@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid Area</title>
+
+    <style>
+        @media screen and (min-width: 461px) {
+            .container {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: minmax(70px, auto);
+                grid-template-areas: "nav nav nav nav" "aside aside main main" "header header main main" "section section section section" "section section section section" "footer footer footer footer"
+            }
+        }
+        
+        @media screen and (max-width: 460px) {
+            .container {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: repeat(4, 1fr);
+                grid-auto-rows: minmax(70px, auto);
+                grid-template-areas: "aside aside nav nav" "aside aside header header" "aside aside main main  " "aside aside section section" "aside aside section section" "aside aside footer footer"
+            }
+        }
+        
+        .container>* {
+            background: lightcoral;
+            padding: 15px;
+        }
+        
+        header {
+            grid-area: header;
+        }
+        
+        main {
+            grid-area: main;
+        }
+        
+        section {
+            grid-area: section;
+        }
+        
+        aside {
+            grid-area: aside;
+        }
+        
+        nav {
+            grid-area: nav;
+        }
+        
+        footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>Header</header>
+        <main>Main</main>
+        <section>Section</section>
+        <aside>Aside</aside>
+        <nav>Nav</nav>
+        <footer>Footer</footer>
+    </div>
+
+</body>
+
+</html>
